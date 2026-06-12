@@ -1,0 +1,69 @@
+# ───────────────────────────────────────────
+# Dependencies & Build Output
+# ───────────────────────────────────────────
+node_modules
+.next
+dist
+build
+out
+
+# ───────────────────────────────────────────
+# Backend (Laravel — uses PHP Pint/CS-Fixer)
+# ───────────────────────────────────────────
+backend
+
+# ───────────────────────────────────────────
+# Lock Files & Generated
+# ───────────────────────────────────────────
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+*.lock
+
+# ───────────────────────────────────────────
+# IDE & Tooling
+# ───────────────────────────────────────────
+.idx
+.vscode
+.gemini
+.agent
+.agents
+.claude
+.codex
+.cursor
+.testsprite
+.husky
+
+# ───────────────────────────────────────────
+# Static Assets (binary / third-party)
+# ───────────────────────────────────────────
+public/fonts
+public/images
+public/*.ico
+public/*.png
+public/*.jpg
+public/*.svg
+
+# ───────────────────────────────────────────
+# Auto-generated / type declarations
+# ───────────────────────────────────────────
+*.d.ts
+next-env.d.ts
+coverage
+
+# ───────────────────────────────────────────
+# Temp & output
+# ───────────────────────────────────────────
+tmp
+*.txt
+*.log
+
+# ───────────────────────────────────────────
+# Project artifacts & docs
+# ───────────────────────────────────────────
+graphify-out
+scratch
+docs
+*.pdf
+*.png
+*.md

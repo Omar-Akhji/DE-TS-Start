@@ -1,0 +1,281 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Modern oklch colors for P3 gamut displays */
+  --color-yellow: oklch(84% 0.18 90deg);
+  --color-orange: oklch(72% 0.17 35deg);
+  --color-bg: oklch(14.1% 0.01 240deg);
+  --color-card: oklch(100% 0 0deg / 5%);
+  --color-text: oklch(100% 0 0deg);
+  --color-text-muted: oklch(100% 0 0deg / 60%);
+  --glass-border: oklch(100% 0 0deg / 10%);
+  --glass-blur: 12px;
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+
+  /* User Defined Breakpoints */
+  --breakpoint-mobile: 580px;
+  --breakpoint-tablet: 770px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1250px;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-poppins), system-ui, sans-serif;
+    font-weight: 400;
+    font-synthesis: none;
+    line-height: 1.6;
+    color: var(--color-text);
+    color-scheme: dark;
+    background-color: var(--color-bg);
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100%;
+    margin: 0;
+    background: var(--color-bg);
+    background-attachment: fixed;
+
+    /* Shadcn defaults mixed in */
+    @apply border-border bg-background text-foreground;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  :is(h1, h2, h3, h4, h5, h6) {
+    text-wrap: balance;
+  }
+
+  h1 {
+    text-wrap: pretty;
+  }
+
+  button,
+  a,
+  [role="button"],
+  label {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  a:disabled,
+  [role="button"][aria-disabled="true"],
+  .cursor-not-allowed {
+    cursor: not-allowed;
+  }
+}
+
+/* Scrollbar Styles (CSS Native) merged into :root below */
+
+/* Base Headings with Responsive Typography */
+@layer base {
+  h1 {
+    @apply text-3xl font-extrabold tracking-tight tablet:text-4xl laptop:text-5xl;
+
+    margin: 0;
+  }
+
+  h2 {
+    @apply text-2xl font-bold tracking-tight tablet:text-3xl laptop:text-4xl;
+
+    margin: 0;
+  }
+
+  h3 {
+    @apply text-xl font-semibold tracking-tight tablet:text-2xl;
+
+    margin: 0;
+  }
+
+  p {
+    @apply text-base tablet:text-lg;
+
+    line-height: 1.6;
+  }
+}
+
+.title-gradient {
+  display: inline-block;
+  padding-top: 0.3rem;
+  padding-bottom: 0.4rem;
+  margin-top: -0.3rem;
+  margin-bottom: -0.4rem;
+  background: linear-gradient(135deg, var(--color-yellow), var(--color-orange));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons and Navigation moved to Tailwind utility classes in components */
+
+@utility animate-fade-in {
+  animation: fade-in 500ms ease forwards;
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  background: linear-gradient(to bottom right, var(--color-yellow), var(--color-orange));
+  border: none;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px oklch(84% 0.18 90deg / 20%);
+  transition: all 200ms;
+
+  &:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+  }
+}
+
+@utility card-link {
+  &::before {
+    position: absolute;
+    inset-inline-start: 50%;
+    top: 50%;
+    z-index: -2;
+    width: 156%;
+    height: 20rem;
+    content: "";
+    background-image: linear-gradient(180deg, var(--color-yellow), var(--color-orange));
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: rotate 3000ms linear infinite;
+  }
+
+  &::after {
+    position: absolute;
+    inset: 3px;
+    z-index: -1;
+    content: "";
+    background: oklch(19% 0.01 240deg);
+    border-radius: inherit;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0%;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Layout Utilities */
+.container {
+  max-inline-size: 1200px;
+  padding-inline: 0.5rem;
+  margin-inline: auto;
+}
+
+.site-footer {
+  padding-block: 2rem;
+  padding-inline: 0;
+  margin-block-start: 4rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  border-block-start: 1px solid var(--glass-border);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(16% 0.01 240deg);
+  --foreground: oklch(100% 0 0deg);
+  --card: oklch(100% 0 0deg / 5%);
+  --card-foreground: oklch(100% 0 0deg);
+  --accent: oklch(97% 0 0deg);
+  --accent-foreground: oklch(20.5% 0 0deg);
+  --border: oklch(92.2% 0 0deg);
+  --input: oklch(92.2% 0 0deg);
+  --ring: oklch(70.8% 0 0deg);
+
+  /* Scrollbar configuration (Native v4.3 utilities) */
+  @apply scrollbar-thin scrollbar-thumb-orange/80 scrollbar-track-bg;
+}
+
+.dark {
+  --background: oklch(14.1% 0.01 240deg);
+  --foreground: oklch(98.5% 0 0deg);
+  --card: oklch(19% 0.01 240deg);
+  --card-foreground: oklch(98.5% 0 0deg);
+  --accent: oklch(26.9% 0 0deg);
+  --accent-foreground: oklch(98.5% 0 0deg);
+  --border: oklch(100% 0 0deg / 10%);
+  --input: oklch(100% 0 0deg / 15%);
+  --ring: oklch(55.6% 0 0deg);
+}
+
+/* ============================================================================
+   REDUCED MOTION — WCAG 2.3.3
+   Single rule covers all layers. !important is correct and intentional here.
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    /* stylelint-disable declaration-no-important */
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    /* stylelint-enable declaration-no-important */
+  }
+}
+
+/* ============================================================================
+   PROGRESSIVE ENHANCEMENT — GSAP Fallback
+   Ensures content is visible if JS fails to load or is disabled.
+   ============================================================================ */
+.no-js .animate-on-scroll {
+  /* stylelint-disable declaration-no-important */
+  visibility: visible !important;
+  opacity: 100% !important;
+  filter: none !important;
+  transform: none !important;
+  /* stylelint-enable declaration-no-important */
+}

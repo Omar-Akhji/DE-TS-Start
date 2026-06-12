@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    // ─── Target & Output ──────────────────────────────────────
+    "target": "es2025",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    // ─── Module Safety & Enforcement ──────────────────────────
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    // ─── Build Behavior ───────────────────────────────────────
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "incremental": true,
+    // ─── Strictness & Runtime Safety ─────────────────────────
+    "strict": true,
+    "checkJs": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "stableTypeOrdering": true,
+    "noErrorTruncation": true,
+    // ─── Code Quality Guards ──────────────────────────────────
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "forceConsistentCasingInFileNames": true,
+    // ─── Modern Syntax Enforcement ────────────────────────────
+    "erasableSyntaxOnly": true,
+    "noUncheckedSideEffectImports": true,
+    // ─── Workspace Paths ────────────────────────────────────────
+    "paths": { "@/*": ["./*"] },
+    // ─── Types ────────────────────────────────────────────────
+    "types": ["node"],
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "allowJs": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
+}
