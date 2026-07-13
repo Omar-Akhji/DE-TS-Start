@@ -130,6 +130,8 @@ const eslintConfig = defineConfig([
     ".codex/**",
     ".claude/**",
     ".cursor/**",
+    "src/routeTree.gen.ts",
+    "vite-env.d.ts",
   ]),
 ]);
 

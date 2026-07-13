@@ -63,7 +63,7 @@ The Builder produces a `.tanstack.json` manifest:
   "mode": "file-router",
   "typescript": true,
   "tailwind": true,
-  "packageManager": "pnpm",
+  "packageManager": "bun",
   "chosenAddOns": ["clerk", "drizzle", "tanstack-query", "tanstack-form"]
 }
 ```
@@ -78,14 +78,14 @@ This manifest is the single source of truth. Both the CLI and `tanstack add` rea
 # Full-stack Start app with auth (Clerk), database (Drizzle), Query, and Form
 npx @tanstack/cli create deutsch-lernen \
   --add-ons clerk,drizzle,tanstack-query,tanstack-form \
-  --package-manager pnpm \
+  --package-manager bun \
   --framework React \
   -y
 ```
 
 What this generates (from CLI docs):
 
-```
+```text
 deutsch-lernen/
 ├── src/
 │   ├── routes/
@@ -99,6 +99,7 @@ deutsch-lernen/
 │   │   └── drizzle.ts          # DB client setup
 │   ├── router.tsx              # createRouter() factory
 │   ├── ssr.tsx                 # SSR handler with createStartHandler
+│   └── client.tsx              # Client entry point for hydration
 │   └── client.tsx              # Client entry point for hydration
 ├── app.config.ts               # defineConfig() with Vite plugins
 ├── .tanstack.json              # CLI project manifest
@@ -313,24 +314,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 22 }
-      - run: pnpm install
-      - run: pnpm build
-      - run: pnpm lint
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install
+      - run: bun run build
+      - run: bun run check:all
 ```
 
 ```dockerfile
 # Dockerfile (from `docker` add-on)
-FROM node:22-slim
-RUN npm install -g pnpm
+FROM oven/bun:latest
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 COPY . .
-RUN pnpm build
-CMD ["pnpm", "start"]
+RUN bun run build
+CMD ["bun", "run", "start"]
 ```
 
 ---

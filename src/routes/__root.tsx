@@ -1,6 +1,7 @@
 import { createRootRoute, HeadContent, Link, Scripts } from "@tanstack/react-router";
 import globalsCss from "../globals.css?url";
 import { Footer } from "../shared/ui/Footer";
+import { GsapRefresh } from "../shared/ui/GsapRefresh";
 import { Navigation } from "../shared/ui/Navigation";
 
 export const Route = createRootRoute({
@@ -54,6 +55,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto max-w-7xl">
           <Navigation />
           <div className="px-2 mobile:px-8">
+            <GsapRefresh />
             {children}
             <Footer />
           </div>

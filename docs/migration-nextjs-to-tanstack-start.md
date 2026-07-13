@@ -455,7 +455,7 @@ export const Route = createFileRoute("/vokabeln")({
 
 After migration, these are unused:
 
-```
+```text
 app/              → all routes moved to src/routes/
 next.config.ts    → replaced by app.config.ts
 postcss.config.mjs → Tailwind v4 now via Vite plugin
@@ -464,7 +464,7 @@ postcss.config.mjs → Tailwind v4 now via Vite plugin
 
 These **stay** (no changes needed):
 
-```
+```text
 features/        → all domain modules
 shared/          → all UI and lib code
 public/          → same behavior
@@ -534,7 +534,7 @@ Update `tsconfig.json` paths to point to `./src/*`:
 
 ### Files to create (new)
 
-```
+```text
 app.config.ts
 src/router.tsx
 src/ssr.tsx
@@ -544,7 +544,7 @@ vite-env.d.ts
 
 ### Files to move + rename
 
-```
+```text
 app/layout.tsx                → src/routes/__root.tsx
 app/page.tsx                  → src/routes/index.tsx
 app/loading.tsx               → merged into root route pendingComponent
@@ -575,7 +575,7 @@ app/register/page.tsx         → src/routes/register/index.tsx
 
 ### Files to delete
 
-```
+```text
 next.config.ts
 postcss.config.mjs
 next-env.d.ts
@@ -584,7 +584,7 @@ app/                           (whole directory after moving all content)
 
 ### Files to keep unchanged
 
-```
+```text
 features/                      (all modules)
 shared/                        (all components, lib, model)
 public/                        (static assets)
