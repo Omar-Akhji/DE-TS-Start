@@ -49,7 +49,7 @@ export const Route = createFileRoute("/pruefung/$level/$module/")({
     };
   },
   pendingComponent: () => (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main className="space-y-12 pb-20">
         <HeroSkeleton />
 

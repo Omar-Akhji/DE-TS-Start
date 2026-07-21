@@ -30,7 +30,7 @@ export const Route = createFileRoute("/grammatik/$section/$topicId/")({
     };
   },
   pendingComponent: () => (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <HeroSkeleton />
         <div className="grid gap-12">
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/grammatik/$section/$topicId/")({
                 {["card-1", "card-2", "card-3"].map((cardId) => (
                   <div
                     key={cardId}
-                    className="group relative block overflow-hidden rounded-xl border border-white/10 bg-card p-5"
+                    className="group relative overflow-hidden rounded-xl border border-white/10 bg-card p-5"
                   >
                     <Skeleton className="mb-2 h-6 w-3/4 bg-white/8" />
                     <div className="flex items-center gap-2">
@@ -76,7 +76,7 @@ function GrammatikDetailPage() {
   return (
     <div
       key="grammar-detail-v2-forced-spacing"
-      className="relative min-h-screen py-8"
+      className="relative min-h-dvh py-8"
     >
       <main>
         <Hero

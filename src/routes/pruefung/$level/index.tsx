@@ -28,7 +28,7 @@ export const Route = createFileRoute("/pruefung/$level/")({
     return { currentExam };
   },
   pendingComponent: () => (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <HeroSkeleton />
         <div className="mb-12 flex justify-center">
@@ -101,7 +101,7 @@ function PruefungDetailPage() {
   }
 
   return (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <Hero
           key="hero-clean-v2"

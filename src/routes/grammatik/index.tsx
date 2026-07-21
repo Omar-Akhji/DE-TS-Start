@@ -35,7 +35,7 @@ export const Route = createFileRoute("/grammatik/")({
     ],
   }),
   pendingComponent: () => (
-    <main className="min-h-screen">
+    <main className="min-h-dvh">
       <PageHeaderSkeleton />
       {["g1", "g2", "g3", "g4", "g5", "g6"].map((id) => (
         <SectionCardSkeleton key={id} />

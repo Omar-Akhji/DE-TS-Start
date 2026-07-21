@@ -27,7 +27,7 @@ export const Route = createFileRoute("/vokabeln/$id/")({
     };
   },
   pendingComponent: () => (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <HeroSkeleton />
         <div className="grid gap-12">
@@ -71,7 +71,7 @@ function VokabelnDetailPage() {
   }
 
   return (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <Hero
           key={`vocab-${item.id}`}
@@ -130,7 +130,7 @@ function VokabelnDetailPage() {
                         className="group block no-underline"
                       >
                         <GlassCard
-                          className="p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-(--color-primary) group-hover:shadow-lg"
+                          className="p-5 transition-[transform,border-color,box-shadow] duration-300 group-hover:-translate-y-1 group-hover:border-(--color-primary) group-hover:shadow-lg"
                           rounded="2xl"
                         >
                           <h3 className="mb-2 text-lg font-semibold text-text group-hover:text-yellow">
@@ -177,7 +177,7 @@ function VokabelnDetailPage() {
                     className="group"
                   >
                     <GlassCard
-                      className="p-5 transition-all duration-300 group-hover:-translate-y-1 group-hover:border-(--color-primary) group-hover:shadow-lg"
+                      className="p-5 transition-[transform,border-color,box-shadow] duration-300 group-hover:-translate-y-1 group-hover:border-(--color-primary) group-hover:shadow-lg"
                       rounded="2xl"
                     >
                       <div className="mb-2 flex items-baseline justify-between">

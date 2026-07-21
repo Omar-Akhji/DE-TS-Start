@@ -22,7 +22,7 @@ export const Route = createFileRoute("/pruefung/$level/modelltests/")({
     ],
   }),
   pendingComponent: () => (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <HeroSkeleton />
         {/* Back link */}

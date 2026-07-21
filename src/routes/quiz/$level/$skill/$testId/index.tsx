@@ -21,7 +21,7 @@ export const Route = createFileRoute("/quiz/$level/$skill/$testId/")({
     ],
   }),
   pendingComponent: () => (
-    <div className="relative min-h-screen py-4">
+    <div className="relative min-h-dvh py-4">
       <div className="relative z-10 flex min-h-125 w-full flex-col rounded-2xl border border-white/10 bg-card px-4 py-6 shadow-2xl backdrop-blur-xl">
         <header className="mb-4 flex items-center justify-between border-b border-white/10 pb-2">
           <Skeleton className="h-5 w-48 bg-white/5" />

@@ -31,7 +31,7 @@ export const Route = createFileRoute("/vokabeln/$id/$topicId/")({
     };
   },
   pendingComponent: () => (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <HeroSkeleton />
         <section className="mt-8">
@@ -58,7 +58,7 @@ function TopicDetailPage() {
   const isFamilyTree = topic.id === "stammbaum" && Boolean(topic.familyTree);
 
   return (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <Hero
           key={`topic-${topic.id}`}

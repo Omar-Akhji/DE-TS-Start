@@ -14,7 +14,7 @@ export const Route = createFileRoute("/pruefung/")({
     return { examLevels };
   },
   pendingComponent: () => (
-    <main className="min-h-screen">
+    <main className="min-h-dvh">
       <PageHeaderSkeleton />
       <ul className="m-0 grid list-none grid-cols-1 gap-8 p-0 laptop:grid-cols-2">
         {["p1", "p2"].map((id) => (

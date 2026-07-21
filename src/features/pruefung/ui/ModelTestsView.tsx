@@ -41,7 +41,7 @@ export default function ModelTestsView({ level, initialModelTests }: ModelTestsV
   ];
 
   return (
-    <div className="relative min-h-screen py-8">
+    <div className="relative min-h-dvh py-8">
       <main>
         <Hero
           title={`Modelltests ${level.toUpperCase()}`}

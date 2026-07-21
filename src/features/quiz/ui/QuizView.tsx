@@ -51,7 +51,7 @@ export default function QuizView({ level, skill, testId, initialQuestions }: Qui
   const skillTitle = SKILL_TITLES.get(skill) ?? skill;
 
   return (
-    <main className="relative min-h-screen py-4">
+    <main className="relative min-h-dvh py-4">
       <article className="relative z-10 flex w-full flex-col rounded-2xl border border-white/10 bg-card px-4 py-6 shadow-2xl backdrop-blur-xl">
         <header className="mb-4 flex items-center justify-between border-b border-white/10 pb-2">
           <h1 className="text-sm font-semibold tracking-widest text-white/50 uppercase">
@@ -139,7 +139,7 @@ export default function QuizView({ level, skill, testId, initialQuestions }: Qui
                                 : null}
                                 {group.map((q, index) => (
                                   <div
-                                    key={q.id || `q-${index}`}
+                                    key={q.id}
                                     className={
                                       index < group.length - 1 ? "border-b border-white/5" : ""
                                     }
@@ -167,9 +167,9 @@ export default function QuizView({ level, skill, testId, initialQuestions }: Qui
                                     selectedAnswer={example.correctAnswer}
                                   />
                                 : null}
-                                {group.map((q, index) => (
+                                {group.map((q) => (
                                   <QuizQuestion
-                                    key={q.id || `q-${index}`}
+                                    key={q.id}
                                     question={q}
                                     currentStep={q.id}
                                     onAnswer={(ans) => handleAnswer(ans, questions.indexOf(q))}

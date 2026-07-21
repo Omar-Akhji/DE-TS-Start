@@ -24,7 +24,7 @@ export const Route = createFileRoute("/vokabeln/")({
     ],
   }),
   pendingComponent: () => (
-    <main className="min-h-screen">
+    <main className="min-h-dvh">
       <PageHeaderSkeleton />
       <section className="py-4">
         <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 py-4">

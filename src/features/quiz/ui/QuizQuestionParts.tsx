@@ -59,7 +59,7 @@ export function ContextCard({
                   key={letter}
                   type="button"
                   onClick={() => onSelectAd({ letter, content })}
-                  className="group relative min-h-30 cursor-pointer rounded-lg border border-white/10 bg-zinc-950/60 p-5 pt-9 text-left text-white/90 shadow-lg backdrop-blur-md transition-all hover:bg-zinc-900/80 focus:ring-2 focus:ring-yellow/50 focus:outline-hidden active:scale-95"
+                  className="group relative min-h-30 cursor-pointer rounded-lg border border-white/10 bg-zinc-950/60 p-5 pt-9 text-left text-white/90 shadow-lg backdrop-blur-md transition-[colors,transform] duration-200 hover:bg-zinc-900/80 focus:ring-2 focus:ring-yellow/50 focus:outline-hidden active:scale-95"
                 >
                   <div className="absolute top-0 left-0 rounded-tl-lg rounded-br-lg border-r border-b border-white/10 bg-zinc-900/90 px-2.5 py-1 text-[10px] font-black text-yellow uppercase shadow-sm">
                     {letter}
@@ -269,6 +269,7 @@ export function AdDetailDialog({ dialogRef, selectedAd, onClose }: AdDetailDialo
   return (
     <dialog
       ref={dialogRef}
+      aria-label="Erklärung"
       className="fixed inset-0 m-auto flex h-max max-h-[90vh] w-max max-w-[min(90vw,32rem)] scale-95 scrollbar-none flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-zinc-950 p-0 text-white opacity-0 shadow-2xl transition-[opacity,transform,overlay,display] duration-250 ease-in-out backdrop:bg-black/80 backdrop:backdrop-blur-sm backdrop:transition-[background-color,backdrop-filter,overlay,display] backdrop:duration-250 open:scale-100 open:opacity-100 starting:open:scale-95 starting:open:opacity-0"
       onClose={onClose}
     >
@@ -276,6 +277,7 @@ export function AdDetailDialog({ dialogRef, selectedAd, onClose }: AdDetailDialo
         <div className="relative p-6 md:p-8">
           <button
             type="button"
+            aria-label="Schließen"
             className="absolute top-4 right-4 flex size-8 cursor-pointer items-center justify-center rounded-full border-2 border-white/10 bg-zinc-900 text-white/40 transition-colors hover:text-yellow"
             onClick={onClose}
           >
@@ -298,7 +300,7 @@ export function AdDetailDialog({ dialogRef, selectedAd, onClose }: AdDetailDialo
             <button
               type="button"
               onClick={onClose}
-              className="w-full cursor-pointer rounded-full bg-linear-to-br from-yellow to-orange py-3 text-sm font-bold text-black transition-all hover:brightness-110 active:scale-95"
+              className="w-full cursor-pointer rounded-full bg-linear-to-br from-yellow to-orange py-3 text-sm font-bold text-black transition-[filter,transform] duration-200 hover:brightness-110 active:scale-95"
             >
               Verstanden
             </button>

@@ -168,7 +168,7 @@ export function SectionCardSkeleton() {
  */
 export function ThemenSkeleton() {
   return (
-    <main className="min-h-screen space-y-16 py-8">
+    <main className="min-h-dvh space-y-16 py-8">
       <header className="mx-auto max-w-2xl space-y-4 text-center">
         <Skeleton className="mx-auto h-10 w-64 bg-white/10" />
         <Skeleton className="mx-auto h-8 w-full max-w-lg bg-white/5" />
@@ -262,7 +262,7 @@ export function HomeSkeleton() {
  */
 export function AuthSkeleton() {
   return (
-    <div className="relative flex min-h-screen items-center justify-center px-4 py-6 md:px-6 md:py-0">
+    <div className="relative flex min-h-dvh items-center justify-center px-4 py-6 md:px-6 md:py-0">
       {/* Decorative glows */}
       <div className="pointer-events-none absolute top-1/4 left-1/4 -z-10 size-72 rounded-full bg-yellow/5 blur-[120px]" />
       <div className="pointer-events-none absolute right-1/4 bottom-1/4 -z-10 size-72 rounded-full bg-orange/5 blur-[120px]" />
@@ -322,7 +322,7 @@ export function AuthSkeleton() {
  */
 export function DefaultPending() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-dvh">
       <PageHeaderSkeleton />
       <section className="py-4">
         <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-8 py-4">
