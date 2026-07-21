@@ -10,18 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as VokabelnIndexRouteImport } from './routes/vokabeln/index'
-import { Route as ThemenIndexRouteImport } from './routes/themen/index'
-import { Route as RegisterIndexRouteImport } from './routes/register/index'
-import { Route as PruefungIndexRouteImport } from './routes/pruefung/index'
-import { Route as LoginIndexRouteImport } from './routes/login/index'
 import { Route as GrammatikIndexRouteImport } from './routes/grammatik/index'
-import { Route as VokabelnIdIndexRouteImport } from './routes/vokabeln/$id/index'
+import { Route as LoginIndexRouteImport } from './routes/login/index'
+import { Route as PruefungIndexRouteImport } from './routes/pruefung/index'
+import { Route as RegisterIndexRouteImport } from './routes/register/index'
+import { Route as ThemenIndexRouteImport } from './routes/themen/index'
+import { Route as VokabelnIndexRouteImport } from './routes/vokabeln/index'
 import { Route as PruefungLevelIndexRouteImport } from './routes/pruefung/$level/index'
-import { Route as VokabelnIdTopicIdIndexRouteImport } from './routes/vokabeln/$id/$topicId/index'
-import { Route as PruefungLevelModelltestsIndexRouteImport } from './routes/pruefung/$level/modelltests/index'
-import { Route as PruefungLevelModuleIndexRouteImport } from './routes/pruefung/$level/$module/index'
+import { Route as VokabelnIdIndexRouteImport } from './routes/vokabeln/$id/index'
 import { Route as GrammatikSectionTopicIdIndexRouteImport } from './routes/grammatik/$section/$topicId/index'
+import { Route as PruefungLevelModuleIndexRouteImport } from './routes/pruefung/$level/$module/index'
+import { Route as PruefungLevelModelltestsIndexRouteImport } from './routes/pruefung/$level/modelltests/index'
+import { Route as VokabelnIdTopicIdIndexRouteImport } from './routes/vokabeln/$id/$topicId/index'
 import { Route as QuizLevelSkillTestIdIndexRouteImport } from './routes/quiz/$level/$skill/$testId/index'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,24 +29,9 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VokabelnIndexRoute = VokabelnIndexRouteImport.update({
-  id: '/vokabeln/',
-  path: '/vokabeln/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ThemenIndexRoute = ThemenIndexRouteImport.update({
-  id: '/themen/',
-  path: '/themen/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RegisterIndexRoute = RegisterIndexRouteImport.update({
-  id: '/register/',
-  path: '/register/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PruefungIndexRoute = PruefungIndexRouteImport.update({
-  id: '/pruefung/',
-  path: '/pruefung/',
+const GrammatikIndexRoute = GrammatikIndexRouteImport.update({
+  id: '/grammatik/',
+  path: '/grammatik/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginIndexRoute = LoginIndexRouteImport.update({
@@ -54,14 +39,24 @@ const LoginIndexRoute = LoginIndexRouteImport.update({
   path: '/login/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GrammatikIndexRoute = GrammatikIndexRouteImport.update({
-  id: '/grammatik/',
-  path: '/grammatik/',
+const PruefungIndexRoute = PruefungIndexRouteImport.update({
+  id: '/pruefung/',
+  path: '/pruefung/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VokabelnIdIndexRoute = VokabelnIdIndexRouteImport.update({
-  id: '/vokabeln/$id/',
-  path: '/vokabeln/$id/',
+const RegisterIndexRoute = RegisterIndexRouteImport.update({
+  id: '/register/',
+  path: '/register/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThemenIndexRoute = ThemenIndexRouteImport.update({
+  id: '/themen/',
+  path: '/themen/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VokabelnIndexRoute = VokabelnIndexRouteImport.update({
+  id: '/vokabeln/',
+  path: '/vokabeln/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PruefungLevelIndexRoute = PruefungLevelIndexRouteImport.update({
@@ -69,15 +64,15 @@ const PruefungLevelIndexRoute = PruefungLevelIndexRouteImport.update({
   path: '/pruefung/$level/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const VokabelnIdTopicIdIndexRoute = VokabelnIdTopicIdIndexRouteImport.update({
-  id: '/vokabeln/$id/$topicId/',
-  path: '/vokabeln/$id/$topicId/',
+const VokabelnIdIndexRoute = VokabelnIdIndexRouteImport.update({
+  id: '/vokabeln/$id/',
+  path: '/vokabeln/$id/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PruefungLevelModelltestsIndexRoute =
-  PruefungLevelModelltestsIndexRouteImport.update({
-    id: '/pruefung/$level/modelltests/',
-    path: '/pruefung/$level/modelltests/',
+const GrammatikSectionTopicIdIndexRoute =
+  GrammatikSectionTopicIdIndexRouteImport.update({
+    id: '/grammatik/$section/$topicId/',
+    path: '/grammatik/$section/$topicId/',
     getParentRoute: () => rootRouteImport,
   } as any)
 const PruefungLevelModuleIndexRoute =
@@ -86,12 +81,17 @@ const PruefungLevelModuleIndexRoute =
     path: '/pruefung/$level/$module/',
     getParentRoute: () => rootRouteImport,
   } as any)
-const GrammatikSectionTopicIdIndexRoute =
-  GrammatikSectionTopicIdIndexRouteImport.update({
-    id: '/grammatik/$section/$topicId/',
-    path: '/grammatik/$section/$topicId/',
+const PruefungLevelModelltestsIndexRoute =
+  PruefungLevelModelltestsIndexRouteImport.update({
+    id: '/pruefung/$level/modelltests/',
+    path: '/pruefung/$level/modelltests/',
     getParentRoute: () => rootRouteImport,
   } as any)
+const VokabelnIdTopicIdIndexRoute = VokabelnIdTopicIdIndexRouteImport.update({
+  id: '/vokabeln/$id/$topicId/',
+  path: '/vokabeln/$id/$topicId/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuizLevelSkillTestIdIndexRoute =
   QuizLevelSkillTestIdIndexRouteImport.update({
     id: '/quiz/$level/$skill/$testId/',
@@ -225,32 +225,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/vokabeln/': {
-      id: '/vokabeln/'
-      path: '/vokabeln'
-      fullPath: '/vokabeln/'
-      preLoaderRoute: typeof VokabelnIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/themen/': {
-      id: '/themen/'
-      path: '/themen'
-      fullPath: '/themen/'
-      preLoaderRoute: typeof ThemenIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/register/': {
-      id: '/register/'
-      path: '/register'
-      fullPath: '/register/'
-      preLoaderRoute: typeof RegisterIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pruefung/': {
-      id: '/pruefung/'
-      path: '/pruefung'
-      fullPath: '/pruefung/'
-      preLoaderRoute: typeof PruefungIndexRouteImport
+    '/grammatik/': {
+      id: '/grammatik/'
+      path: '/grammatik'
+      fullPath: '/grammatik/'
+      preLoaderRoute: typeof GrammatikIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login/': {
@@ -260,18 +239,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/grammatik/': {
-      id: '/grammatik/'
-      path: '/grammatik'
-      fullPath: '/grammatik/'
-      preLoaderRoute: typeof GrammatikIndexRouteImport
+    '/pruefung/': {
+      id: '/pruefung/'
+      path: '/pruefung'
+      fullPath: '/pruefung/'
+      preLoaderRoute: typeof PruefungIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/vokabeln/$id/': {
-      id: '/vokabeln/$id/'
-      path: '/vokabeln/$id'
-      fullPath: '/vokabeln/$id/'
-      preLoaderRoute: typeof VokabelnIdIndexRouteImport
+    '/register/': {
+      id: '/register/'
+      path: '/register'
+      fullPath: '/register/'
+      preLoaderRoute: typeof RegisterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/themen/': {
+      id: '/themen/'
+      path: '/themen'
+      fullPath: '/themen/'
+      preLoaderRoute: typeof ThemenIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vokabeln/': {
+      id: '/vokabeln/'
+      path: '/vokabeln'
+      fullPath: '/vokabeln/'
+      preLoaderRoute: typeof VokabelnIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pruefung/$level/': {
@@ -281,18 +274,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PruefungLevelIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/vokabeln/$id/$topicId/': {
-      id: '/vokabeln/$id/$topicId/'
-      path: '/vokabeln/$id/$topicId'
-      fullPath: '/vokabeln/$id/$topicId/'
-      preLoaderRoute: typeof VokabelnIdTopicIdIndexRouteImport
+    '/vokabeln/$id/': {
+      id: '/vokabeln/$id/'
+      path: '/vokabeln/$id'
+      fullPath: '/vokabeln/$id/'
+      preLoaderRoute: typeof VokabelnIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/pruefung/$level/modelltests/': {
-      id: '/pruefung/$level/modelltests/'
-      path: '/pruefung/$level/modelltests'
-      fullPath: '/pruefung/$level/modelltests/'
-      preLoaderRoute: typeof PruefungLevelModelltestsIndexRouteImport
+    '/grammatik/$section/$topicId/': {
+      id: '/grammatik/$section/$topicId/'
+      path: '/grammatik/$section/$topicId'
+      fullPath: '/grammatik/$section/$topicId/'
+      preLoaderRoute: typeof GrammatikSectionTopicIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pruefung/$level/$module/': {
@@ -302,11 +295,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PruefungLevelModuleIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/grammatik/$section/$topicId/': {
-      id: '/grammatik/$section/$topicId/'
-      path: '/grammatik/$section/$topicId'
-      fullPath: '/grammatik/$section/$topicId/'
-      preLoaderRoute: typeof GrammatikSectionTopicIdIndexRouteImport
+    '/pruefung/$level/modelltests/': {
+      id: '/pruefung/$level/modelltests/'
+      path: '/pruefung/$level/modelltests'
+      fullPath: '/pruefung/$level/modelltests/'
+      preLoaderRoute: typeof PruefungLevelModelltestsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vokabeln/$id/$topicId/': {
+      id: '/vokabeln/$id/$topicId/'
+      path: '/vokabeln/$id/$topicId'
+      fullPath: '/vokabeln/$id/$topicId/'
+      preLoaderRoute: typeof VokabelnIdTopicIdIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/quiz/$level/$skill/$testId/': {
@@ -338,12 +338,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

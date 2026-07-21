@@ -4,9 +4,10 @@ function Skeleton({ className, ...properties }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="skeleton"
-      // Deutsch Lernen - High-Performance React Architecture
-
-      className={cn("animate-pulse rounded-md bg-accent", className)}
+      className={cn(
+        "relative overflow-hidden rounded-md bg-white/5 before:absolute before:inset-0 before:-translate-x-full before:bg-linear-to-r before:from-transparent before:via-white/8 before:to-transparent before:animate-shimmer",
+        className
+      )}
       {...properties}
     />
   );

@@ -24,21 +24,21 @@ export function AuthCard({ defaultView }: AuthCardProps) {
   };
 
   return (
-    <div className="relative flex min-h-dvh items-center justify-center px-4 py-6 md:px-6 md:py-0">
+    <div className="relative flex min-h-dvh items-center justify-center px-4 py-6 animate-fade-in md:px-6 md:py-0">
       {/* Decorative ambient glows using theme colors */}
-      <div className="pointer-events-none absolute top-1/4 left-1/4 -z-10 size-72 rounded-full bg-yellow/10 blur-[120px]" />
-      <div className="pointer-events-none absolute right-1/4 bottom-1/4 -z-10 size-72 rounded-full bg-orange/10 blur-[120px]" />
+      <div className="pointer-events-none absolute top-1/4 left-1/4 -z-10 size-72 rounded-full bg-yellow/10 blur-[120px] animate-glow-slow" />
+      <div className="pointer-events-none absolute right-1/4 bottom-1/4 -z-10 size-72 rounded-full bg-orange/10 blur-[120px] animate-glow-reverse" />
 
       {/* Back-to-home button */}
       <Link
         to="/"
         aria-label="Zurück zur Startseite"
-        className="absolute top-6 left-6 z-50 flex size-10 items-center justify-center rounded-full border border-slate-800 bg-slate-950/40 text-text-muted shadow-sm backdrop-blur-md transition-all duration-300 hover:scale-105 hover:border-orange/30 hover:bg-orange/10 hover:text-orange focus:ring-2 focus:ring-orange focus:outline-none"
+        className="absolute top-6 left-6 z-50 flex size-10 items-center justify-center rounded-full border border-slate-800 bg-slate-950/40 text-text-muted shadow-sm backdrop-blur-md transition-[transform,colors,box-shadow] duration-300 hover:scale-105 hover:border-orange/30 hover:bg-orange/10 hover:text-orange focus:ring-2 focus:ring-orange focus:outline-none"
       >
         <ChevronLeft className="size-5" />
       </Link>
 
-      <div className="relative flex w-full max-w-md flex-col overflow-hidden rounded-3xl border border-slate-800/80 bg-card shadow-2xl shadow-orange/5 backdrop-blur-(--glass-blur) transition-all duration-500 md:max-w-4xl md:flex-row">
+      <div className="relative flex w-full max-w-md flex-col overflow-hidden rounded-3xl border border-slate-800/80 bg-card shadow-2xl shadow-orange/5 backdrop-blur-(--glass-blur) animate-scale-in md:max-w-4xl md:flex-row">
         {/* PANEL 1: Left navigation menu (desktop/tablet) */}
         <nav
           aria-label="Auth Ansichtsauswahl"

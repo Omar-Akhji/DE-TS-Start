@@ -262,17 +262,17 @@ export function HomeSkeleton() {
  */
 export function AuthSkeleton() {
   return (
-    <div className="relative flex min-h-dvh items-center justify-center px-4 py-6 md:px-6 md:py-0">
+    <div className="relative flex min-h-dvh items-center justify-center px-4 py-6 animate-fade-in md:px-6 md:py-0">
       {/* Decorative glows */}
-      <div className="pointer-events-none absolute top-1/4 left-1/4 -z-10 size-72 rounded-full bg-yellow/5 blur-[120px]" />
-      <div className="pointer-events-none absolute right-1/4 bottom-1/4 -z-10 size-72 rounded-full bg-orange/5 blur-[120px]" />
+      <div className="pointer-events-none absolute top-1/4 left-1/4 -z-10 size-72 rounded-full bg-yellow/5 blur-[120px] animate-glow-slow" />
+      <div className="pointer-events-none absolute right-1/4 bottom-1/4 -z-10 size-72 rounded-full bg-orange/5 blur-[120px] animate-glow-reverse" />
 
       {/* Back button */}
       <div className="absolute top-6 left-6 z-50 flex size-10 items-center justify-center rounded-full border border-slate-800 bg-slate-950/40 text-text-muted backdrop-blur-md">
         <Skeleton className="size-4 rounded-sm bg-white/10" />
       </div>
 
-      <div className="relative flex w-full max-w-md flex-col overflow-hidden rounded-3xl border border-slate-800/80 bg-card shadow-2xl backdrop-blur-(--glass-blur) md:max-w-4xl md:flex-row">
+      <div className="relative flex w-full max-w-md flex-col overflow-hidden rounded-3xl border border-slate-800/80 bg-card shadow-2xl backdrop-blur-(--glass-blur) animate-scale-in md:max-w-4xl md:flex-row">
         {/* Left Nav Panel Skeleton */}
         <div className="hidden w-36 shrink-0 flex-col items-center justify-between border-r border-slate-800/50 bg-slate-950/10 py-8 md:flex">
           <Skeleton className="size-12 rounded-full bg-white/10" />

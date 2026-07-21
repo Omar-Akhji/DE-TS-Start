@@ -76,7 +76,7 @@ export const QuizResult = ({ score, total, onRestart, onExit }: QuizResultProper
               strokeLinecap="round"
               strokeDasharray={440}
               strokeDashoffset={440 - (440 * percentage) / 100}
-              className="transition-all duration-1000 ease-out"
+              className="transition-[stroke-dashoffset] duration-1000 ease-out"
             />
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -102,7 +102,7 @@ export const QuizResult = ({ score, total, onRestart, onExit }: QuizResultProper
           </button>
           <button
             type="button"
-            className="cursor-pointer rounded-full bg-linear-to-br from-yellow to-orange px-8 py-3 font-semibold text-black shadow-xl shadow-yellow/20 transition-all hover:scale-105 hover:brightness-110"
+            className="cursor-pointer rounded-full bg-linear-to-br from-yellow to-orange px-8 py-3 font-semibold text-black shadow-xl shadow-yellow/20 transition-[transform,filter] hover:scale-105 hover:brightness-110"
             onClick={onRestart}
           >
             Nochmal

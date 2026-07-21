@@ -291,7 +291,7 @@ export function ThemenSection({ isEmbedded, initialThemen }: ThemenSectionProper
         type="button"
         aria-label="Nach oben scrollen"
         onClick={() => globalThis.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed right-8 bottom-8 z-50 flex size-14 items-center justify-center rounded-full bg-amber-500 text-black shadow-2xl transition-all hover:scale-110 active:scale-95"
+        className="fixed right-8 bottom-8 z-50 flex size-14 items-center justify-center rounded-full bg-amber-500 text-black shadow-2xl transition-transform hover:scale-110 active:scale-95"
       >
         <ArrowUp size={28} />
       </button>

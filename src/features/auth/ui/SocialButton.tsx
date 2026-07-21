@@ -10,7 +10,7 @@ export function SocialButton({ provider, onClick, disabled }: SocialButtonProps)
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="flex h-11 cursor-pointer items-center justify-center rounded-xl border border-slate-800 bg-slate-950/15 text-xs font-bold text-white transition-all duration-300 hover:scale-[1.02] hover:border-orange/40 hover:bg-orange/10 hover:shadow-md hover:shadow-orange/5 focus:ring-2 focus:ring-orange/20 focus:outline-none active:scale-[0.98] disabled:opacity-60"
+      className="flex h-11 cursor-pointer items-center justify-center rounded-xl border border-slate-800 bg-slate-950/15 text-xs font-bold text-white transition-[transform,colors,box-shadow] duration-300 hover:scale-[1.02] hover:border-orange/40 hover:bg-orange/10 hover:shadow-md hover:shadow-orange/5 focus:ring-2 focus:ring-orange/20 focus:outline-none active:scale-[0.98] disabled:opacity-60"
     >
       {provider === "Google" ?
         <GoogleLogo />

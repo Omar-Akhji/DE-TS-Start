@@ -69,7 +69,7 @@ export const QuizStart = ({
       >
         <button
           type="button"
-          className="cursor-pointer rounded-full bg-linear-to-r from-yellow to-orange px-8 py-4 text-lg font-bold text-black shadow-xl shadow-yellow/20 transition-all inline-full hover:scale-[1.02] hover:brightness-110"
+          className="cursor-pointer rounded-full bg-linear-to-r from-yellow to-orange px-8 py-4 text-lg font-bold text-black shadow-xl shadow-yellow/20 transition-[transform,filter] inline-full hover:scale-[1.02] hover:brightness-110"
           onClick={onStart}
         >
           Prüfung Starten

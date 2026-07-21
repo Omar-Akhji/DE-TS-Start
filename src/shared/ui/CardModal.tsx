@@ -141,7 +141,7 @@ export function CardModal({
             <button
               type="button"
               onClick={handleNavigate}
-              className="flex-1 cursor-pointer rounded-full bg-linear-to-br from-yellow to-orange px-4 pbs-2.5 pbe-2.5 font-semibold text-black transition-all hover:brightness-110"
+              className="flex-1 cursor-pointer rounded-full bg-linear-to-br from-yellow to-orange px-4 pbs-2.5 pbe-2.5 font-semibold text-black transition-[filter] hover:brightness-110"
             >
               Öffnen
             </button>

@@ -247,7 +247,7 @@ function PruefungDetailPage() {
                             level: currentExam.level,
                             module: section.id.split("-", 2)[1] as "sprechen" | "schreiben",
                           }}
-                          className="group md:is-auto flex items-center justify-center gap-2 rounded-full bg-linear-to-r from-amber-400 to-orange-500 px-8 py-3.5 font-bold text-zinc-950 shadow-lg shadow-amber-500/20 transition-all inline-full hover:scale-[1.02] hover:brightness-110 active:scale-95 md:self-start"
+                          className="group md:is-auto flex items-center justify-center gap-2 rounded-full bg-linear-to-r from-amber-400 to-orange-500 px-8 py-3.5 font-bold text-zinc-950 shadow-lg shadow-amber-500/20 transition-[transform,filter] inline-full hover:scale-[1.02] hover:brightness-110 active:scale-95 md:self-start"
                         >
                           <MessageCircle
                             size={20}

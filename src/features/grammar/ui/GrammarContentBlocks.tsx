@@ -47,7 +47,7 @@ export const GrammarContentBlocks = ({ blocks, usage, tips }: GrammarContentBloc
                 return (
                   <div
                     key={`${block.title}-${itemKey.slice(0, 40)}`}
-                    className="rounded-e-xl border-s-[6px] border-yellow bg-white/5 p-4 text-white/90 backdrop-blur-sm transition-all hover:translate-x-1 hover:bg-white/8"
+                    className="rounded-e-xl border-s-[6px] border-yellow bg-white/5 p-4 text-white/90 backdrop-blur-sm transition-[transform,background-color] duration-200 hover:translate-x-1 hover:bg-white/8"
                     style={{ borderStartStartRadius: 0, borderEndStartRadius: 0 }}
                   >
                     <ContentItem content={item} />

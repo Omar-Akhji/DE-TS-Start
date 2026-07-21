@@ -202,7 +202,7 @@ export default function QuizView({ level, skill, testId, initialQuestions }: Qui
                       <button
                         type="button"
                         onClick={finishQuiz}
-                        className="rounded border border-yellow/50 bg-yellow/10 px-8 py-2 text-sm font-bold text-yellow transition-all hover:bg-yellow hover:text-black"
+                        className="rounded border border-yellow/50 bg-yellow/10 px-8 py-2 text-sm font-bold text-yellow transition-colors hover:bg-yellow hover:text-black"
                       >
                         Prüfung beenden
                       </button>
