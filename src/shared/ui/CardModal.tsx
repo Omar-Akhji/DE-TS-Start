@@ -54,16 +54,17 @@ export function CardModal({
     };
   }, [isOpen]);
 
+  if (!isOpen) return null;
+
   const handleNavigate = () => {
     onClose();
     void navigate({ to: href });
   };
 
-  if (!isOpen) return null;
-
   return (
     <dialog
       ref={dialogReference}
+      aria-labelledby="modal-title"
       className="fixed inset-0 z-100 m-0 flex items-center justify-center bg-transparent px-4 pbs-4 pbe-4 block-full inline-full max-block-full max-inline-full"
     >
       {/* Backdrop */}

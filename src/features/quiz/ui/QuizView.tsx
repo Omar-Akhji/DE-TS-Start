@@ -36,12 +36,6 @@ export default function QuizView({ level, skill, testId, initialQuestions }: Qui
     finishQuiz,
   } = useQuiz(questions);
 
-  const goBack = () => {
-    void navigate({ to: "/pruefung/$level/modelltests", params: { level } });
-  };
-
-  const skillTitle = SKILL_TITLES.get(skill) ?? skill;
-
   if (questions.length === 0) {
     return (
       <div className="py-12 text-center">
@@ -49,6 +43,12 @@ export default function QuizView({ level, skill, testId, initialQuestions }: Qui
       </div>
     );
   }
+
+  const goBack = () => {
+    void navigate({ to: "/pruefung/$level/modelltests", params: { level } });
+  };
+
+  const skillTitle = SKILL_TITLES.get(skill) ?? skill;
 
   return (
     <main className="relative min-h-screen py-4">

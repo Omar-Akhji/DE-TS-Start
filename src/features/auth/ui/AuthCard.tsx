@@ -1,4 +1,4 @@
-import { useState, useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronLeft, UserCheck, UserPlus } from "lucide-react";
 import { cn } from "../../../shared/lib/utilities.ts";
@@ -13,11 +13,14 @@ export function AuthCard({ defaultView }: AuthCardProps) {
   const [view, setView] = useState<"signin" | "signup">(defaultView);
   const [isPending, startTransition] = useTransition();
 
-  const toggleView = (target: "signin" | "signup") => {
-    setView(target);
+  useEffect(() => {
     if (typeof history !== "undefined") {
-      history.replaceState(null, "", target === "signin" ? "/login" : "/register");
+      history.replaceState(null, "", view === "signin" ? "/login" : "/register");
     }
+  }, [view]);
+
+  const toggleView = (target: "signin" | "signup") => {
+    setView(() => target);
   };
 
   return (

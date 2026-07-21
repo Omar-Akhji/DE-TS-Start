@@ -50,8 +50,9 @@ export function ContextCard({
             .slice(1)
             .map((ad) => {
               const letter = ad.match(/^([a-j])\)/)?.[1];
-              const content = ad.replace(/^[a-j]\)\s*/, "");
               if (!letter) return null;
+
+              const content = ad.replace(/^[a-j]\)\s*/, "");
 
               return (
                 <button

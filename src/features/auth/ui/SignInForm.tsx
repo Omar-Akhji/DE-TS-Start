@@ -30,7 +30,7 @@ export function SignInForm({ onToggleView, isPending, startTransition }: SignInF
         await new Promise((resolve) => setTimeout(resolve, 1200));
         alert(`Erfolgreich angemeldet als ${formData.email}! (Simulierte Anmeldung)`);
         if (typeof location !== "undefined") {
-          location.href = "/";
+          location.assign("/");
         }
       })();
     });
@@ -45,7 +45,7 @@ export function SignInForm({ onToggleView, isPending, startTransition }: SignInF
         await new Promise((resolve) => setTimeout(resolve, 800));
         alert("Erfolgreich mit dem Demo-Konto angemeldet!");
         if (typeof location !== "undefined") {
-          location.href = "/";
+          location.assign("/");
         }
       })();
     });

@@ -31,7 +31,7 @@ export function SignUpForm({ onToggleView, isPending, startTransition }: SignUpF
         await new Promise((resolve) => setTimeout(resolve, 1200));
         alert(`Konto für ${formData.email} wurde erfolgreich erstellt! (Simulierte Registrierung)`);
         if (typeof location !== "undefined") {
-          location.href = "/";
+          location.assign("/");
         }
       })();
     });

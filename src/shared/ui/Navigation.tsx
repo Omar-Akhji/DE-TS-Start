@@ -72,15 +72,15 @@ export function Navigation() {
               { to: "/login", label: "Anmelden" },
             ] as { to: string; label: string }[]
           ).map(({ to, label }) => {
-            const active = isActive(to);
+            const isActiveRoute = isActive(to);
             return (
               <Link
                 key={to}
                 to={to}
                 className={`relative z-10 rounded-full px-4 pbs-1.5 pbe-1.5 text-sm font-semibold transition-colors duration-200 tablet:px-6 tablet:pbs-2 tablet:pbe-2 tablet:text-base ${
-                  active ? "text-black" : "text-mist-500 hover:text-white"
+                  isActiveRoute ? "text-black" : "text-mist-500 hover:text-white"
                 }`}
-                aria-current={active ? "page" : undefined}
+                aria-current={isActiveRoute ? "page" : undefined}
               >
                 {label}
               </Link>

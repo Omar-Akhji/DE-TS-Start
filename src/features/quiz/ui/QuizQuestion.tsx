@@ -32,13 +32,13 @@ export const QuizQuestion = ({
   const isHeader = variant === "header";
   const isTableRow = variant === "table-row" || variant === "example-row";
   const isExample = variant === "example" || variant === "example-row";
-  const hideQuestionBody = isHeader;
-  const showTeilHeader = isHeader;
+  const isHideQuestionBody = isHeader;
+  const isShowTeilHeader = isHeader;
   const [selectedAd, setSelectedAd] = useState<{ letter: string; content: string } | null>(null);
   const dialogReference = useRef<HTMLDialogElement>(null);
 
   const handleSelectAd = (ad: { letter: string; content: string }) => {
-    setSelectedAd(ad);
+    setSelectedAd(() => ad);
     dialogReference.current?.showModal();
   };
 
@@ -69,12 +69,12 @@ export const QuizQuestion = ({
     && question.options[1] === "b"
     && question.options[2] === "c";
 
-  const isCompactRow = Boolean(isRichtigFalsch || isJaNein || (isTableRow && isABC));
+  const isCompactRow = isRichtigFalsch || isJaNein || (isTableRow && isABC);
   const cleanedQuestionText = question.question.replace(/^\d+\.\s*/, "");
 
   return (
     <article className={`mx-auto w-full animate-fade-in ${isTableRow ? "" : "space-y-6"}`}>
-      {showTeilHeader && !isTableRow ?
+      {isShowTeilHeader && !isTableRow ?
         <TeilHeader
           teil={question.teil}
           teilTitle={question.teilTitle}
@@ -94,7 +94,7 @@ export const QuizQuestion = ({
         </div>
       : null}
 
-      {hideQuestionBody ? null : (
+      {isHideQuestionBody ? null : (
         <div
           className={
             isTableRow ? "w-full" : (

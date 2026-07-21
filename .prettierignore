@@ -50,6 +50,7 @@ public/*.svg
 *.d.ts
 next-env.d.ts
 coverage
+src/routeTree.gen.ts
 
 # ───────────────────────────────────────────
 # Temp & output

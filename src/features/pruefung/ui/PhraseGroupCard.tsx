@@ -24,10 +24,12 @@ export function PhraseGroupCard({
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            setIsOpen(!isOpen);
+          if (!(e.key === "Enter" || e.key === " ")) {
+            return;
           }
+
+          e.preventDefault();
+          setIsOpen(!isOpen);
         }}
         className={`flex w-full cursor-pointer items-center justify-between border-none bg-transparent px-6 py-3.5 text-left transition-colors select-none focus:outline-none ${
           isChecklistItem ?

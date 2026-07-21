@@ -58,7 +58,7 @@ export function useQuiz(questions: Question[]) {
 
   const jumpToQuestion = (index: number) => {
     if (index >= 0 && index < questions.length) {
-      setCurrentQuestionIndex(index);
+      setCurrentQuestionIndex(() => index);
     }
   };
 

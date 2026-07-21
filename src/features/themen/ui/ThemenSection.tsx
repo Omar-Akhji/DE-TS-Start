@@ -154,7 +154,7 @@ export function ThemenSection({ isEmbedded, initialThemen }: ThemenSectionProper
             </span>
             Alle{" "}
           </button>
-          {[...categoryConfig.entries()].map(([id, config]) => (
+          {[...categoryConfig].map(([id, config]) => (
             <button
               key={id}
               type="button"
@@ -193,7 +193,7 @@ export function ThemenSection({ isEmbedded, initialThemen }: ThemenSectionProper
       <div
         className={`space-y-24 transition-opacity duration-300 ${isPending ? "opacity-40" : "opacity-100"}`}
       >
-        {[...filteredGroups.entries()].map(([catId, themes]) => {
+        {[...filteredGroups].map(([catId, themes]) => {
           const config = categoryConfig.get(catId);
           if (!config) return null;
 

@@ -55,7 +55,7 @@ function TopicDetailPage() {
     );
   }
 
-  const isFamilyTree = topic.id === "stammbaum" && topic.familyTree;
+  const isFamilyTree = topic.id === "stammbaum" && Boolean(topic.familyTree);
 
   return (
     <div className="relative min-h-screen py-8">

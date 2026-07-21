@@ -3,11 +3,15 @@ import tseslintPlugin from "@typescript-eslint/eslint-plugin";
 import tsParser from "@typescript-eslint/parser";
 import nounsanitized from "eslint-plugin-no-unsanitized";
 import prettierRecommended from "eslint-plugin-prettier/recommended";
+import reactDoctor from "eslint-plugin-react-doctor";
 import securityPlugin from "eslint-plugin-security";
 import unicorn from "eslint-plugin-unicorn";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 const eslintConfig = defineConfig([
+  // ─── React Doctor ──────────────────────────────────────────────
+  reactDoctor.configs.recommended,
+
   // ─── Markdown ──────────────────────────────────────────────────
   ...markdown.configs.recommended,
   {
@@ -27,7 +31,7 @@ const eslintConfig = defineConfig([
     files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
     rules: {
       "unicorn/filename-case": ["error", { cases: { kebabCase: true, pascalCase: true } }],
-      "unicorn/prevent-abbreviations": [
+      "unicorn/name-replacements": [
         "error",
         { replacements: { props: false, ref: false, params: false, e: false, err: false } },
       ],
